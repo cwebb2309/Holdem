@@ -8,3 +8,16 @@ func ReceiveDealtCard(deck []string, hand []string) ([]string, []string) {
 
 	return remainingDeck, newHand
 }
+
+// GenerateHand takes a deck and pulls a 5 card hand from it
+func GenerateHand(deck []string) ([]string, []string) {
+
+	hand := make([]string, 0, 5)
+	deck, hand = ReceiveDealtCard(deck, hand)
+	deck, hand = ReceiveDealtCard(deck, hand)
+	deck, hand = ReceiveDealtCard(deck, hand)
+	deck, hand = ReceiveDealtCard(deck, hand)
+	deck, hand = ReceiveDealtCard(deck, hand)
+
+	return deck, hand
+}

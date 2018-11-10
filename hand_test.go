@@ -24,3 +24,18 @@ func TestReceiveCard(t *testing.T) {
 	}
 
 }
+
+func TestGenerateHand(t *testing.T) {
+
+	testDeck := CreateDeck()
+
+	testDeck, testHand := GenerateHand(testDeck)
+
+	expected := "2D,3D,4D,5D,6D"
+	actual := strings.Join(testHand, ",")
+
+	if actual != expected {
+		t.Errorf("Expected %s got %s", expected, actual)
+	}
+
+}

@@ -8,11 +8,12 @@ import (
 func main() {
 
 	myDeck := CreateDeck()
-	fmt.Println("Unshuffled")
-	fmt.Println(strings.Join(myDeck, ", "))
-
 	myDeck = ShuffleDeck(myDeck)
-	fmt.Println("Shuffled")
-	fmt.Println(strings.Join(myDeck, ", "))
+
+	myDeck, myHand := GenerateHand(myDeck)
+
+	myDeckString := strings.Join(myHand, ",")
+
+	fmt.Println(myDeckString)
 
 }
