@@ -18,3 +18,11 @@ func CreateDeck() []string {
 	}
 	return cards
 }
+
+//DealCard takes a deck of cards and returns the top card and a new deack with the top card removed
+func DealCard(d []string) (string, []string) {
+	dealt := d[0]
+	remaining := d[1:len(d)]
+
+	return dealt, remaining
+}
