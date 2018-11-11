@@ -10,7 +10,7 @@ func main() {
 	myDeck := CreateDeck()
 	myDeck = ShuffleDeck(myDeck)
 
-	myDeck, myHand := GenerateHand(myDeck)
+	myDeck, myHand := DealCards(myDeck, 5)
 
 	myDeckString := strings.Join(myHand, ",")
 

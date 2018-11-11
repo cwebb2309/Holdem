@@ -9,15 +9,14 @@ func ReceiveDealtCard(deck []string, hand []string) ([]string, []string) {
 	return remainingDeck, newHand
 }
 
-// GenerateHand takes a deck and pulls a 5 card hand from it
-func GenerateHand(deck []string) ([]string, []string) {
+// DealCards takes a deck and pulls a number of cards hand from it
+func DealCards(deck []string, cardCount int) ([]string, []string) {
 
-	hand := make([]string, 0, 5)
-	deck, hand = ReceiveDealtCard(deck, hand)
-	deck, hand = ReceiveDealtCard(deck, hand)
-	deck, hand = ReceiveDealtCard(deck, hand)
-	deck, hand = ReceiveDealtCard(deck, hand)
-	deck, hand = ReceiveDealtCard(deck, hand)
+	hand := make([]string, 0, 9)
+
+	for i := 0; i < cardCount; i++ {
+		deck, hand = ReceiveDealtCard(deck, hand)
+	}
 
 	return deck, hand
 }
