@@ -10,10 +10,19 @@ func main() {
 	myDeck := CreateDeck()
 	myDeck = ShuffleDeck(myDeck)
 
-	myDeck, myHand := DealCards(myDeck, 5)
+	myDeck, playerOne := DealHoleCards(myDeck)
+	playerOneHole := strings.Join(playerOne, ",")
+	fmt.Println(playerOneHole)
 
-	myDeckString := strings.Join(myHand, ",")
+	myDeck, sharedCards := DealFlop(myDeck)
+	sharedCardsString := strings.Join(sharedCards, ",")
+	fmt.Println(sharedCardsString)
 
-	fmt.Println(myDeckString)
+	myDeck, sharedCards = DealTurnOrRiver(myDeck, sharedCards)
+	sharedCardsString = strings.Join(sharedCards, ",")
+	fmt.Println(sharedCardsString)
 
+	myDeck, sharedCards = DealTurnOrRiver(myDeck, sharedCards)
+	sharedCardsString = strings.Join(sharedCards, ",")
+	fmt.Println(sharedCardsString)
 }
